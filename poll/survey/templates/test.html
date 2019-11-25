@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block content%}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<form action= "/test/{{user_id}}/{{vibor_test_id }}/{{previous}}/" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="stimul" value="{{stimul}}">
+    <input type="hidden" name="user_id" value="{{user_id}}">
+    <input type="hidden" name="vibor_test_id" value="{{vibor_test_id}}">
+    <input type="hidden" name="next" value="{{next}}">
+    <input type="hidden" name="answer" value="{{answer}}">
+
+
+
+
+<div class="row">
+    <div class="col-sm-2"> </div>
+    <div class="col-sm-9">
+         <div class="card">
+           <div class="card-header">
+
+           </div>
+           <div class="card-body">
+                <h5 class="card-title"> {{ question.test_id}}:     {{ question.stimulus}}  </h5>
+                <input class="input=standart-grey" name="answer" >
+
+                    <p class="card-text">  <div class="form-check form-check-inline">
+
+                            <label class="form-check-label" for="inlineRadio_a">
+
+               <a href="/test/{{user_id }}/{{vibor_test_id}}/{{previous}}" class="btn btn-primary">Orqaga</a>  <div class="form-check form-check-inline"> </div>
+               <a href="/test/{{user_id }}/{{vibor_test_id}}/{{next}}" class="btn btn-primary">Keyingi</a>  <div class="form-check form-check-inline"> </div>
+               <button class="btn btn-primary" type="submit">Saqlash</button>
+           </div>
+         </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+</div>
+</form>
+{% endblock%}

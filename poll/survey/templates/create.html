@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% block content%}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+
+  </ol>
+
+</nav>
+<form  method="POST">
+    {% csrf_token %}
+<div class="row">
+    <div class="col-sm-2"> </div>
+    <div class="col-sm-9">
+         <div class="card">
+           <div class="card-header">
+               Axborot Texnologiyali Asotsatsiyasi bo'yicha tajriba Noyabr-Dekabr 2019-yil /
+               <p>Raxbar: Fan nomzodi Dotsent Fillipovich Yu.N</p>
+           </div>
+           <div class="card-body">
+                <h5 class="card-title"> {{ question.question}} </h5>
+                    <p class="card-text">
+                        <br>
+                      Iltimos Ro'yhatdan o'ting <p>
+                        <tr><th><label for="id_fullname">F.I.O:</label></th><td><input type="text" name="fullname" maxlength="200" required id="id_fullname"></td></tr>
+    <tr><th>
+
+      <label for="id_age">Tug'ilgan kuningiz:</label></th><td> <input type="date" class="" name="age" required id="id_age"></td></tr>
+    <div><tr><th><label>Jisn:</label></th><td><ul id="id_pol">
+        <li><label for="id_pol_0"><input type="checkbox" name="pol" value="М" id="id_pol_0">
+     М</label>
+
+    </li>
+        <li><label for="id_pol_1"><input type="checkbox" name="pol" value="Ж" id="id_pol_1">
+     Ж</label>
+
+    </li>
+    </ul></td></tr></div>
+    <tr><th><label for="id_specialite">Mutaxasislik:</label></th><td><input type="text" name="specialite" maxlength="100" required id="id_specialite"></td></tr>
+    <tr><th><label for="id_language">Til:</label></th><td><input type="text" name="language" maxlength="100" required id="id_language"></td></tr>
+    <tr><th><label for="id_survey">Variant:</label></th><td><select name="survey" required id="id_survey">
+      <option value="" selected>Tanlash</option>
+
+      <option value="1">1 gruh</option>
+
+      <option value="2">2 gruh</option>
+
+      <option value="3">3 gruh</option>
+
+    </select></td></tr>
+
+                    </p>
+               <button type="submit">Saqlash</button>
+                       </div>
+         </div>
+        <div class="card-footer text-muted">
+            Moskva Politexnika Unversiteti 2019
+        </div>
+    </div>
+</div>
+</form>
+{% endblock%}
